@@ -28,4 +28,19 @@ class TileTest < Minitest::Test
     assert_equal "shot", "shot"
   end
 
+  def test_tile_value_reflects_a_battleship_placement
+    tile = Tile.new("B", "none")
+    assert_equal "B", tile.tile_valuation
+  end
+
+  def test_tile_value_reflects_a_destroyer_placement
+    tile = Tile.new("D", "none")
+    assert_equal "D", tile.tile_valuation
+  end
+
+  def test_tile_value_reflects_a_hit_if_ship_present
+    tile = Tile.new("B", "present")
+    assert_equal "H", tile.tile_valuation
+  end
+
 end
