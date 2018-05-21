@@ -22,4 +22,9 @@ class BoardTest < Minitest::Test
     assert_equal String, board.tile_value_array_maker[0].class
     assert_equal String, board.tile_value_array_maker[15].class
   end
+
+  def test_board_shows_values_from_tile_value_array_maker
+    board = Board.new
+    assert_equal "    ", board.board_maker
+  end
 end
